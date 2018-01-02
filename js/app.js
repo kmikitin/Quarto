@@ -12,6 +12,141 @@ $('#A').on('click', (evt)=>{
 	}
 })
 
+$('#B').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#C').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#D').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#E').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#F').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#G').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#H').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#I').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#J').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#K').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#L').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#M').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#N').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#O').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
+$('#P').on('click', (evt)=>{
+	console.log('clicked!');
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
+})
+
 /*
 start button will begin the game (run initial functions)
 
