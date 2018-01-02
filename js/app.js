@@ -1,164 +1,85 @@
 console.log('Connected!')
 
-$('#A').on('click', (evt)=>{
-	console.log('clicked!');
-	// console.log(evt.currentTarget)
-	// console.log($(evt.currentTarget).css('border'))
+// GAME PIECES:
+// each game piece div needs an event listener
+// on the click the piece will be highlighted (salmon color)
+//  -- this will need to be a function that toggles the border?
+
+function changeBorder(evt){
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
 		$(evt.currentTarget).css('border', '6px solid #EB9486')
 		// console.log($(evt.currentTarget).css('border'))
+		// if the border is salmon and the user clicks again, change it back to black to deselect
 	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
 		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
 	}
+	console.log(this)
+}
+
+$('#A').on('click', changeBorder);
+
+$('#B').on('click', changeBorder);
+
+$('#C').on('click', changeBorder);
+
+$('#D').on('click', changeBorder);
+
+$('#E').on('click', changeBorder);
+
+$('#F').on('click', changeBorder);
+
+$('#G').on('click', changeBorder);
+
+$('#H').on('click', changeBorder);
+
+$('#I').on('click', changeBorder);
+
+$('#J').on('click', changeBorder);
+
+$('#K').on('click', changeBorder);
+
+$('#L').on('click', changeBorder);
+
+$('#M').on('click', changeBorder);
+
+$('#N').on('click', changeBorder);
+
+$('#O').on('click', changeBorder);
+
+$('#P').on('click', changeBorder);
+
+// when the piece is selected it is passed into a function as an argument
+// *when piece is moved the inner circle color needs to be changed to white
+
+// the second argument for that function will be the place on the board that the piece is going to
+function choosePlacement(gamePiece, spotOnBoard){
+
+
+}
+
+// SPOTS ON THE BOARD:
+// each spot on the board needs an event listener
+$('#one').on('click', (evt)=>{
+	console.log('clicked!');
+	console.log(evt.currentTarget);
+	$('#A').css('border', '1px solid rgb(0, 0, 0)');
+	$(evt.currentTarget).append($('#A'));
+	console.log(this)
 })
 
-$('#B').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
+$('#eight').on('click', (evt)=>{
+	$(evt.currentTarget).append($('#P'));
 })
 
-$('#C').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
+function checkWinner(){
 
-$('#D').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
+}
 
-$('#E').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#F').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#G').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#H').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#I').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#J').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#K').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#L').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#M').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#N').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#O').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
-
-$('#P').on('click', (evt)=>{
-	console.log('clicked!');
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
-	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
-		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
-	}
-})
 
 /*
-start button will begin the game (run initial functions)
 
-each game piece div needs an event listener
-each spot on the board needs an event listener
 
-on the click the piece will be highlighted (salmon color)
- -- this will need to be a function that toggles the border?
-when the piece is selected it it passed into a function as an argument
-*when piece is moved the inner circle color needs to be changed to white
-
-the second argument for that function will be the place on the board that the piece is going to
+need to make sure that more than one piece can't be selected: so they can select one, and deselect it, but not have mutliple selected at a time
 
 checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 
