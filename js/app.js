@@ -59,14 +59,16 @@ $('#P').on('click', changeBorder);
 function choosePlacement(gamePiece, spotOnBoard){
 	// grab the selected gamePiece
 	gamePiece = currentPiece;
-	console.log(gamePiece);
+	// console.log(gamePiece);
 	$(gamePiece).css('border', '1px solid rgb(0, 0, 0)');
 	// grab the selected spot
-	console.log(this)
+	// console.log(this)
 	spotOnBoard = this;
 	// append the gamePiece to the spot
 	$(gamePiece).appendTo($(spotOnBoard));
 	// add the class of the game piece to the spot (classes will be checked by checkWinner)
+	// console.log($(gamePiece).attr('class'))
+	$(spotOnBoard).addClass($(gamePiece).attr('class'));
 
 }
 
@@ -104,6 +106,8 @@ $('#fifteen').on('click', choosePlacement);
 
 $('#sixteen').on('click', choosePlacement);
 
+
+// checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
 
 }
@@ -114,7 +118,7 @@ function checkWinner(){
 
 need to make sure that more than one piece can't be selected: so they can select one, and deselect it, but not have mutliple selected at a time
 
-checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
+
 
 when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
 

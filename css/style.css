@@ -49,6 +49,9 @@ h1 {
 	height: auto;
 	background-color: #F9F8F8;
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /*edge spots*/
@@ -134,8 +137,8 @@ h1 {
 .inner-circle {
 	background-color: #7E7F9A;
 	border: 1px solid black;
-	height: 20px;
-	width: 20px;
+	height: 25px;
+	width: 25px;
 	border-radius: 50%;
 	margin: 1%;
 }
