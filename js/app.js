@@ -1,10 +1,5 @@
 console.log('Connected!')
 
-// GAME PIECES:
-// each game piece div needs an event listener
-// on the click the piece will be highlighted (salmon color)
-//  -- this will need to be a function that toggles the border?
-
 let currentPiece = '';
 
 function changeBorder(evt){
@@ -16,10 +11,14 @@ function changeBorder(evt){
 	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
 		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
 		currentPiece = '';
-	}
-	console.log(this)
-}
+	};
+	// console.log(this);
+};
 
+// GAME PIECES:
+// each game piece div needs an event listener
+// on the click the piece will be highlighted (salmon color)
+//  -- this will need to be a function that toggles the border?
 $('#A').on('click', changeBorder);
 
 $('#B').on('click', changeBorder);
@@ -61,6 +60,7 @@ function choosePlacement(gamePiece, spotOnBoard){
 	gamePiece = currentPiece;
 	// console.log(gamePiece);
 	$(gamePiece).css('border', '1px solid rgb(0, 0, 0)');
+	$(gamePiece).children().css('background-color', '#F9F8F8');
 	// grab the selected spot
 	// console.log(this)
 	spotOnBoard = this;
@@ -110,17 +110,33 @@ $('#sixteen').on('click', choosePlacement);
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
 
+// when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
+// Possible ways to win:
+// 1 3 6 10
+// 1 2 4 7
+// 10 13 15 16
+// 7 11 14 16
+// 1 5 12 16
+// 7 8 9 10
+// 3 5 8 11
+// 6 9 12 14
+// 4 8 12 15
+// 2 5 9 13
+
+// Qualitites to check to win;
+// big
+// small
+// square
+// circle
+// hole 
+// flat
+// --make these all classes
+
 }
 
 
 /*
-
-
 need to make sure that more than one piece can't be selected: so they can select one, and deselect it, but not have mutliple selected at a time
-
-
-
-when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
 
 after win new game button will reset the board and move pieces back to their container
 
@@ -146,9 +162,6 @@ circle
 hole 
 flat
 --make these all classes
-
-How/what is the computer checking??
-Append the classes of the incoming piece to the spot it's in?
 
 How to make it so that more than one piece can't be selected at a time?
 */
