@@ -1,8 +1,9 @@
 console.log('Connected!')
 
 let currentPiece = '';
+let spotsInPlay = [];
 
-function changeBorder(evt){
+function selectPiece(evt){
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
 		$(evt.currentTarget).css('border', '6px solid #EB9486')
 		currentPiece = evt.currentTarget;
@@ -19,37 +20,37 @@ function changeBorder(evt){
 // each game piece div needs an event listener
 // on the click the piece will be highlighted (salmon color)
 //  -- this will need to be a function that toggles the border?
-$('#A').on('click', changeBorder);
+$('#A').on('click', selectPiece);
 
-$('#B').on('click', changeBorder);
+$('#B').on('click', selectPiece);
 
-$('#C').on('click', changeBorder);
+$('#C').on('click', selectPiece);
 
-$('#D').on('click', changeBorder);
+$('#D').on('click', selectPiece);
 
-$('#E').on('click', changeBorder);
+$('#E').on('click', selectPiece);
 
-$('#F').on('click', changeBorder);
+$('#F').on('click', selectPiece);
 
-$('#G').on('click', changeBorder);
+$('#G').on('click', selectPiece);
 
-$('#H').on('click', changeBorder);
+$('#H').on('click', selectPiece);
 
-$('#I').on('click', changeBorder);
+$('#I').on('click', selectPiece);
 
-$('#J').on('click', changeBorder);
+$('#J').on('click', selectPiece);
 
-$('#K').on('click', changeBorder);
+$('#K').on('click', selectPiece);
 
-$('#L').on('click', changeBorder);
+$('#L').on('click', selectPiece);
 
-$('#M').on('click', changeBorder);
+$('#M').on('click', selectPiece);
 
-$('#N').on('click', changeBorder);
+$('#N').on('click', selectPiece);
 
-$('#O').on('click', changeBorder);
+$('#O').on('click', selectPiece);
 
-$('#P').on('click', changeBorder);
+$('#P').on('click', selectPiece);
 
 // when the piece is selected it is passed into a function as an argument
 // *when piece is moved the inner circle color needs to be changed to white
@@ -69,7 +70,7 @@ function choosePlacement(gamePiece, spotOnBoard){
 	// add the class of the game piece to the spot (classes will be checked by checkWinner)
 	// console.log($(gamePiece).attr('class'))
 	$(spotOnBoard).addClass($(gamePiece).attr('class'));
-
+	spotsInPlay.push($(spotOnBoard));
 }
 
 // SPOTS ON THE BOARD:
@@ -109,7 +110,11 @@ $('#sixteen').on('click', choosePlacement);
 
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
-
+	for(let i = 0; i < spotsInPlay.length; i++){
+		console.log(spotsInPlay[i]);
+		// ["0"].className
+		// if()
+	}
 // when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
 // Possible ways to win:
 // 1 3 6 10

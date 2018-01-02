@@ -8,7 +8,8 @@ header {
 }
 
 h1 {
-	font-size: 40px;
+	font-size: 60px;
+	font-weight: bold;
 }
 
 /*container div for the board spaces*/
@@ -77,6 +78,7 @@ h1 {
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 	height: 400px;
 	width: 400px;
 	border: 1px solid black; 
