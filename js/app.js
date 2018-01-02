@@ -1,9 +1,10 @@
 console.log('Connected!')
 
 let currentPiece = '';
-let spotsInPlay = [];
+const spotsInPlay = [];
 
 function selectPiece(evt){
+	// when the user selects a piece, highlight it by changing the border to salmon
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
 		$(evt.currentTarget).css('border', '6px solid #EB9486')
 		currentPiece = evt.currentTarget;
@@ -111,8 +112,13 @@ $('#sixteen').on('click', choosePlacement);
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
 	for(let i = 0; i < spotsInPlay.length; i++){
+		// what type of data is spotsInPlay
+		console.log(typeof spotsInPlay[i]);
+		// what info lives in there? Where is the class?
 		console.log(spotsInPlay[i]);
-		// ["0"].className
+		// get the classes of the spotsInPlay
+		console.log($(spotsInPlay)[i].attr('class'));
+		console.log($(spotsInPlay)[i].attr('class').includes('big'))
 		// if()
 	}
 // when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
