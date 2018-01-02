@@ -1,0 +1,124 @@
+body {
+	background-color: #7E7F9A;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+.board {
+	display: inline-flex;
+	border: 1px solid black;
+	flex-direction: column;
+	height: 750px;
+	width: 750px;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border: 1px solid black;
+	height: 12%;
+}
+
+.button {
+	background-color: #EB9486;
+	border: 2px solid black;
+	width: 12%;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/*board spaces*/
+.spot {
+	border-radius: 50%;
+	border: 1px solid black;
+	width: 12%;
+	height: auto;
+	background-color: #F9F8F8;
+}
+
+/*edge spots*/
+#four, #eleven {
+	margin-left: 12%;
+}
+
+#two, #fourteen {
+	margin-left: 24%;
+}
+
+#six, #thirteen {
+	margin-right: 12%;
+}
+
+#three, #fifteen {
+	margin-right: 24%;
+}
+
+.game-pieces {
+	display: inline-flex;
+	flex-direction: column;
+	height: 750px;
+	width: 200px;
+	border: 1px solid black; 
+	color: white;
+
+}
+
+/*plumb colored pieces*/
+#A, #B, #C, #D, #E, #F, #G, #H {
+	background-color: #272838;
+	border: 1px solid black;
+}
+
+/*yellow colored pieces*/
+#I, #J, #K, #L, #M, #N, #O, #P {
+	background-color: #F3DE8A;
+	border: 1px solid black;
+}
+
+/*big pieces - square*/
+#A, #B, #I, #J {
+	height: 75px;
+	width: 75px;
+	border-radius: 10px;
+	margin: 1%;
+}
+
+/*big pieces - circle*/
+#C, #D, #K, #L {
+	height: 50px;
+	width: 75px;
+	border-radius: 50%;
+	margin: 1%;
+}
+
+/*little pieces - square*/
+#E, #F, #M, #N {
+	height: 50px;
+	width: 50px;
+	border-radius: 10px;
+	margin: 1%;
+}
+
+/*little pieces - circle*/
+#G, #H, #O, #P {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	margin: 1%;
+}
+
+/*pieces with holes on top*/
+#B, #D, #E, #H, #J, #L, #N, #P {
+
+}
+.instructions {
+	display: inline-flex;
+	flex-direction: column;
+	border: 1px solid black;
+	padding: 1%;
+	background-color: #F9F8F8;
+}
