@@ -1,7 +1,15 @@
 console.log('Connected!')
 
-$('#A').on('click', ()=>{
-	console.log('clicked!')
+$('#A').on('click', (evt)=>{
+	console.log('clicked!');
+	// console.log(evt.currentTarget)
+	// console.log($(evt.currentTarget).css('border'))
+	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+		$(evt.currentTarget).css('border', '6px solid #EB9486')
+		// console.log($(evt.currentTarget).css('border'))
+	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
+		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+	}
 })
 
 /*
@@ -49,4 +57,5 @@ flat
 How/what is the computer checking??
 Append the classes of the incoming piece to the spot it's in?
 
+How to make it so that more than one piece can't be selected at a time?
 */
