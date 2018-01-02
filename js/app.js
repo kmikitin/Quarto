@@ -5,13 +5,17 @@ console.log('Connected!')
 // on the click the piece will be highlighted (salmon color)
 //  -- this will need to be a function that toggles the border?
 
+let currentPiece = '';
+
 function changeBorder(evt){
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
 		$(evt.currentTarget).css('border', '6px solid #EB9486')
+		currentPiece = evt.currentTarget;
 		// console.log($(evt.currentTarget).css('border'))
 		// if the border is salmon and the user clicks again, change it back to black to deselect
 	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
 		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
+		currentPiece = '';
 	}
 	console.log(this)
 }
@@ -53,23 +57,52 @@ $('#P').on('click', changeBorder);
 
 // the second argument for that function will be the place on the board that the piece is going to
 function choosePlacement(gamePiece, spotOnBoard){
-
+	// grab the selected gamePiece
+	gamePiece = currentPiece;
+	console.log(gamePiece);
+	$(gamePiece).css('border', '1px solid rgb(0, 0, 0)');
+	// grab the selected spot
+	console.log(this)
+	spotOnBoard = this;
+	// append the gamePiece to the spot
+	$(gamePiece).appendTo($(spotOnBoard));
+	// add the class of the game piece to the spot (classes will be checked by checkWinner)
 
 }
 
 // SPOTS ON THE BOARD:
 // each spot on the board needs an event listener
-$('#one').on('click', (evt)=>{
-	console.log('clicked!');
-	console.log(evt.currentTarget);
-	$('#A').css('border', '1px solid rgb(0, 0, 0)');
-	$(evt.currentTarget).append($('#A'));
-	console.log(this)
-})
+$('#one').on('click', choosePlacement);
 
-$('#eight').on('click', (evt)=>{
-	$(evt.currentTarget).append($('#P'));
-})
+$('#two').on('click', choosePlacement);
+
+$('#three').on('click', choosePlacement);
+
+$('#four').on('click', choosePlacement);
+
+$('#five').on('click', choosePlacement);
+
+$('#six').on('click', choosePlacement);
+
+$('#seven').on('click', choosePlacement);
+
+$('#eight').on('click', choosePlacement);
+
+$('#nine').on('click', choosePlacement);
+
+$('#ten').on('click', choosePlacement);
+
+$('#eleven').on('click', choosePlacement);
+
+$('#twelve').on('click', choosePlacement);
+
+$('#thirteen').on('click', choosePlacement);
+
+$('#fourteen').on('click', choosePlacement);
+
+$('#fifteen').on('click', choosePlacement);
+
+$('#sixteen').on('click', choosePlacement);
 
 function checkWinner(){
 
