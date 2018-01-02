@@ -118,7 +118,7 @@ function checkWinner(){
 		console.log(spotsInPlay[i]);
 		// get the classes of the spotsInPlay
 		console.log($(spotsInPlay)[i].attr('class'));
-		console.log($(spotsInPlay)[i].attr('class').includes('big'))
+		console.log($(spotsInPlay)[i].attr('class').includes('hole'))
 		// if()
 	}
 // when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
