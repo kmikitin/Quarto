@@ -11,6 +11,7 @@ h1 {
 	font-size: 40px;
 }
 
+/*container div for the board spaces*/
 .board {
 	display: inline-flex;
 	border: 1px solid black;
@@ -71,12 +72,13 @@ h1 {
 	margin-right: 24%;
 }
 
+/*the container div for the game pieces*/
 .game-pieces {
 	display: inline-flex;
-	flex-direction: column;
+	flex-direction: row;
 	flex-wrap: wrap;
-	height: 750px;
-	width: 200px;
+	height: 400px;
+	width: 400px;
 	border: 1px solid black; 
 	color: white;
 	text-align: center;
