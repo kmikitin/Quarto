@@ -1,7 +1,7 @@
 console.log('Connected!')
 
 let currentPiece = '';
-const spotsInPlay = [];
+const spotsInPlayId = [];
 const spotOne = $('#one');
 const spotTwo = $('#two');
 const spotThree = $('#three');
@@ -33,9 +33,9 @@ function selectPiece(evt){
 	// console.log(this);
 };
 
+// the pseudocode and notes on how this works are inside of 'mini.js'
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
-// the pseudocode and notes on how this works are inside of 'mini.js'
 	// this is me figuring stuff out:
 	// // what type of data is spotsInPlay
 	// console.log(typeof spotsInPlay[i]);
@@ -54,46 +54,82 @@ function checkWinner(){
 		spot3.children().css('border', '6px solid rgb(235, 148, 134)');
 		spot4.children().css('border', '6px solid rgb(235, 148, 134)');
 	};
-
+	
+	for(let i = 0; i < spotsInPlayId.length; i++){
 	// 1 3 6 10
-	if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('three') === true && spotsInPlayId.includes('six') && spotsInPlayId.includes('ten')){
-		console.log('numbers 1 3 6 10');
-			if($('#one', ).attr('class').includes('dark') && $('#three').attr('class').includes('dark') &&) {
-				// console.log('dark win!');
-				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
-				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+		if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('three') === true && spotsInPlayId.includes('six') === true && spotsInPlayId.includes('ten') === true){
+			console.log('numbers 1 3 6 10');
+			if(compareQualities(spotOne, spotThree, spotSix, spotTen, 'dark')) {
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
 				// have to return to exit the loop
-				return 'dark win!'
-			} else if ($('#one').attr('class').includes('square') && $('#three').attr('class').includes('square')){
+				return 'dark win!';
+			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'square')){
 				// console.log('square win!');
-				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
-				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
 				return 'square win!'
-			} else if ($('#one').attr('class').includes('circle') && $('#three').attr('class').includes('circle')){
+			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'circle')){
 				// console.log('circle win!');
-				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
-				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
 				return 'circle win!'
-			} else if ($('#one').attr('class').includes('light') && $('#three').attr('class').includes('light')){
+			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'light')){
 				// console.log('light win!');
-				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
-				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
 				return 'light win!'	
-			} else if ($('#one').attr('class').includes('big') && $('#three').attr('class').includes('big')){
+			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'big')){
 				// console.log('big win!');
-				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
-				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
 				return 'big win!'
-			} else if ($('#one').attr('class').includes('small') && $('#three').attr('class').includes('small')){
+			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'small')){
 				// console.log('small win!');
-				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
-				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
 				return 'small win!'
+			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'hole')){
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				return 'hole win!'
+			}else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'smooth')){
+				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				return 'smooth win!'
 			}
-		}			
+		}
+
+		// 1 2 4 7
+		if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('two') === true && spotsInPlayId.includes('four') === true && spotsInPlayId.includes('seven') === true){
+			console.log('numbers 1 2 4 7');
+			if(compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'dark')) {
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'square')){
+				// console.log('square win!');
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				return 'square win!'
+			} else if (compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				return 'circle win!'
+			} else if (compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'light')){
+				// console.log('light win!');
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				return 'light win!'	
+			} else if (compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'big')){
+				// console.log('big win!');
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				return 'big win!'
+			} else if (compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'small')){
+				// console.log('small win!');
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				return 'small win!'
+			} else if (compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'hole')){
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				return 'hole win!'
+			}else if (compareQualities(spotOne, spotTwo, spotFour, spotSeven, 'smooth')){
+				highlightWin(spotOne, spotTwo, spotFour, spotSeven);
+				return 'smooth win!'
+			}
+		}
+	}				
 
 // Possible ways to win:
-// 1 2 4 7
 // 10 13 15 16
 // 7 11 14 16
 // 1 5 12 16
@@ -134,7 +170,7 @@ function choosePlacement(gamePiece, spotOnBoard){
 	// add the class of the game piece to the spot (classes will be checked by checkWinner)
 	// console.log($(gamePiece).attr('class'))
 	$(spotOnBoard).addClass($(gamePiece).attr('class'));
-	spotsInPlay.push($(spotOnBoard));
+	spotsInPlayId.push($(spotOnBoard).attr('id'));
 	checkWinner();
 };
 
