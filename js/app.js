@@ -141,6 +141,8 @@ function checkWinner(){
 // circle
 // hole 
 // flat
+// dark
+// light
 // --make these all classes
 
 }

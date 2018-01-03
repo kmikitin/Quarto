@@ -78,9 +78,10 @@ h1 {
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
 	height: 400px;
 	width: 400px;
+	/*margin-top: 200px;*/
 	border: 1px solid black; 
 	color: white;
 	text-align: center;
@@ -102,7 +103,7 @@ h1 {
 #A, #B, #I, #J {
 	height: 65px;
 	width: 65px;
-	border-radius: 10px;
+	border-radius: 5px;
 	margin: 1%;
 }
 
@@ -152,9 +153,16 @@ h1 {
 	width: 40px;
 }
 
+/*this is an anchor box to control the unruly game piece div*/
+#box {
+	height: 10px;
+	width: 10px;
+}
+
 .instructions {
 	display: inline-flex;
 	flex-direction: column;
+	width: 200px;
 	border: 1px solid black;
 	padding: 1%;
 	background-color: #F9F8F8;
