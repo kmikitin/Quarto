@@ -17,42 +17,6 @@ function selectPiece(evt){
 	// console.log(this);
 };
 
-// GAME PIECES:
-// each game piece div needs an event listener
-// on the click the piece will be highlighted (salmon color)
-//  -- this will need to be a function that toggles the border?
-$('#A').on('click', selectPiece);
-
-$('#B').on('click', selectPiece);
-
-$('#C').on('click', selectPiece);
-
-$('#D').on('click', selectPiece);
-
-$('#E').on('click', selectPiece);
-
-$('#F').on('click', selectPiece);
-
-$('#G').on('click', selectPiece);
-
-$('#H').on('click', selectPiece);
-
-$('#I').on('click', selectPiece);
-
-$('#J').on('click', selectPiece);
-
-$('#K').on('click', selectPiece);
-
-$('#L').on('click', selectPiece);
-
-$('#M').on('click', selectPiece);
-
-$('#N').on('click', selectPiece);
-
-$('#O').on('click', selectPiece);
-
-$('#P').on('click', selectPiece);
-
 // when the piece is selected it is passed into a function as an argument
 // *when piece is moved the inner circle color needs to be changed to white
 
@@ -72,42 +36,7 @@ function choosePlacement(gamePiece, spotOnBoard){
 	// console.log($(gamePiece).attr('class'))
 	$(spotOnBoard).addClass($(gamePiece).attr('class'));
 	spotsInPlay.push($(spotOnBoard));
-}
-
-// SPOTS ON THE BOARD:
-// each spot on the board needs an event listener
-$('#one').on('click', choosePlacement);
-
-$('#two').on('click', choosePlacement);
-
-$('#three').on('click', choosePlacement);
-
-$('#four').on('click', choosePlacement);
-
-$('#five').on('click', choosePlacement);
-
-$('#six').on('click', choosePlacement);
-
-$('#seven').on('click', choosePlacement);
-
-$('#eight').on('click', choosePlacement);
-
-$('#nine').on('click', choosePlacement);
-
-$('#ten').on('click', choosePlacement);
-
-$('#eleven').on('click', choosePlacement);
-
-$('#twelve').on('click', choosePlacement);
-
-$('#thirteen').on('click', choosePlacement);
-
-$('#fourteen').on('click', choosePlacement);
-
-$('#fifteen').on('click', choosePlacement);
-
-$('#sixteen').on('click', choosePlacement);
-
+};
 
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
@@ -145,7 +74,77 @@ function checkWinner(){
 // light
 // --make these all classes
 
-}
+};
+
+// GAME PIECES:
+// each game piece div needs an event listener
+// on the click the piece will be highlighted (salmon color)
+//  -- this will need to be a function that toggles the border?
+$('#A').on('click', selectPiece);
+
+$('#B').on('click', selectPiece);
+
+$('#C').on('click', selectPiece);
+
+$('#D').on('click', selectPiece);
+
+$('#E').on('click', selectPiece);
+
+$('#F').on('click', selectPiece);
+
+$('#G').on('click', selectPiece);
+
+$('#H').on('click', selectPiece);
+
+$('#I').on('click', selectPiece);
+
+$('#J').on('click', selectPiece);
+
+$('#K').on('click', selectPiece);
+
+$('#L').on('click', selectPiece);
+
+$('#M').on('click', selectPiece);
+
+$('#N').on('click', selectPiece);
+
+$('#O').on('click', selectPiece);
+
+$('#P').on('click', selectPiece);
+
+// SPOTS ON THE BOARD:
+// each spot on the board needs an event listener
+$('#one').on('click', choosePlacement);
+
+$('#two').on('click', choosePlacement);
+
+$('#three').on('click', choosePlacement);
+
+$('#four').on('click', choosePlacement);
+
+$('#five').on('click', choosePlacement);
+
+$('#six').on('click', choosePlacement);
+
+$('#seven').on('click', choosePlacement);
+
+$('#eight').on('click', choosePlacement);
+
+$('#nine').on('click', choosePlacement);
+
+$('#ten').on('click', choosePlacement);
+
+$('#eleven').on('click', choosePlacement);
+
+$('#twelve').on('click', choosePlacement);
+
+$('#thirteen').on('click', choosePlacement);
+
+$('#fourteen').on('click', choosePlacement);
+
+$('#fifteen').on('click', choosePlacement);
+
+$('#sixteen').on('click', choosePlacement);
 
 
 /*

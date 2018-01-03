@@ -13,14 +13,6 @@ function selectPiece(evt){
 	};
 };
 
-$('#A').on('click', selectPiece);
-
-$('#B').on('click', selectPiece);
-
-$('#C').on('click', selectPiece);
-
-$('#D').on('click', selectPiece);
-
 function choosePlacement(gamePiece, spotOnBoard){
 	gamePiece = currentPiece;
 	$(gamePiece).css('border', '1px solid rgb(0, 0, 0)');
@@ -29,7 +21,30 @@ function choosePlacement(gamePiece, spotOnBoard){
 	$(gamePiece).appendTo($(spotOnBoard));
 	$(spotOnBoard).addClass($(gamePiece).attr('class'));
 	spotsInPlay.push($(spotOnBoard));
-}
+};
+
+function checkWinner(){
+	for(let i = 0; i < spotsInPlay.length; i++){
+		// what type of data is spotsInPlay
+		console.log(typeof spotsInPlay[i]);
+		// what info lives in there? Where is the class?
+		console.log(spotsInPlay[i]);
+		// get the classes of the spotsInPlay
+		console.log($(spotsInPlay)[i].attr('class'));
+		console.log($(spotsInPlay)[i].attr('class').includes('hole'))
+		// if()
+	}
+};
+
+$('#A').on('click', selectPiece);
+
+$('#B').on('click', selectPiece);
+
+$('#C').on('click', selectPiece);
+
+$('#D').on('click', selectPiece);
+
+
 
 $('#one').on('click', choosePlacement);
 
@@ -38,3 +53,5 @@ $('#two').on('click', choosePlacement);
 $('#three').on('click', choosePlacement);
 
 $('#four').on('click', choosePlacement);
+
+	
