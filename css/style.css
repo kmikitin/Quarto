@@ -76,9 +76,10 @@ h1 {
 /*the container div for the game pieces*/
 .game-pieces {
 	display: inline-flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-around;
+/*	justify-content: space-around;
+	align-content: space-around;*/
 	height: 400px;
 	width: 400px;
 	/*margin-top: 200px;*/
