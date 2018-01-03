@@ -2,10 +2,14 @@ console.log('Connected!')
 
 let currentPiece = '';
 const spotsInPlayId = [];
+const spotOne = $('#one')
+const spotTwo = $('#two')
+const spotThree = $('#three')
+const spotFour = $('#four')
 
 function selectPiece(evt){
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
+		$(evt.currentTarget).css('border', '6px solid rgb(235, 148, 134)')
 		currentPiece = evt.currentTarget;
 	} else if ($(evt.currentTarget).css('border') === '6px solid rgb(235, 148, 134)'){
 		$(evt.currentTarget).css('border', '1px solid rgb(0, 0, 0)')
@@ -13,7 +17,21 @@ function selectPiece(evt){
 	};
 };
 
+
+
+// console.log(compareQualities('dark'))
+
+function highlightWin(){
+
+}
+
 function checkWinner(){
+	// this function is evaluating what was on the first line of my if statements
+	function compareQualities(spot1, spot2, quality){
+		// take two spots on the board, and one of the qualities(found in the classes of the spot, which were given to it by the game piece), see if the quality is present in both spots, if so return true (which is what includes does)
+		return $(spot1).attr('class').includes(quality) && $(spot2).attr('class').includes(quality)
+	}
+
 	for(let i = 0; i < spotsInPlayId.length; i++){
 		// check each of the 4 board configurations that make a win
 		// get the classes of each of the spots being checked
@@ -22,24 +40,36 @@ function checkWinner(){
 		// console.log(i)
 		if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('three') === true){
 		// console.log('numbers 1 and 3');
-			if($('#one').attr('class').includes('dark') && $('#three').attr('class').includes('dark')) {
-				console.log('dark win!');
+			if(compareQualities(spotOne, spotThree, 'dark') === true) {
+				// console.log('dark win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				// have to return to exit the loop
 				return 'dark win!'
 			} else if ($('#one').attr('class').includes('square') && $('#three').attr('class').includes('square')){
-				console.log('square win!');
+				// console.log('square win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'square win!'
 			} else if ($('#one').attr('class').includes('circle') && $('#three').attr('class').includes('circle')){
-				console.log('circle win!');
+				// console.log('circle win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'circle win!'
 			} else if ($('#one').attr('class').includes('light') && $('#three').attr('class').includes('light')){
-				console.log('light win!');
+				// console.log('light win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'light win!'	
 			} else if ($('#one').attr('class').includes('big') && $('#three').attr('class').includes('big')){
-				console.log('big win!');
+				// console.log('big win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'big win!'
 			} else if ($('#one').attr('class').includes('small') && $('#three').attr('class').includes('small')){
-				console.log('small win!');
+				// console.log('small win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'small win!'
 			}
 		}			
@@ -47,51 +77,105 @@ function checkWinner(){
 		if (spotsInPlayId.includes('three') === true &&  spotsInPlayId.includes('four') === true) {
 		// console.log('numbers three and four');
 			if($('#three').attr('class').includes('dark') && $('#four').attr('class').includes('dark')) {
-				console.log('dark win!');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				// have to return to exit the loop
+				return 'dark win!'
 			} else if ($('#three').attr('class').includes('square') && $('#four').attr('class').includes('square')){
-				console.log('square win!');
+				// console.log('square win!');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'square win!'
 			} else if ($('#three').attr('class').includes('circle') && $('#four').attr('class').includes('circle')){
-				console.log('circle win!');
+				// console.log('circle win!');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'circle win!'
 			} else if ($('#three').attr('class').includes('light') && $('#four').attr('class').includes('light')){
-				console.log('light win!');	
+				// console.log('light win!');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'light win!'		
 			} else if ($('#three').attr('class').includes('big') && $('#four').attr('class').includes('big')){
-				console.log('big win!');
+				// console.log('big win!');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'big win!'
 			} else if ($('#three').attr('class').includes('small') && $('#four').attr('class').includes('small')){
-				console.log('small win!');
+				// console.log('small win!');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'small win!'
 			}
 		}		
 		// one and two 
 		if (spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('two') === true) {
 		// console.log('numbers one and two');	
 			if($('#one').attr('class').includes('dark') && $('#two').attr('class').includes('dark')) {
-				console.log('dark win!');
+				// console.log('dark win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'dark win!'
 			} else if ($('#one').attr('class').includes('square') && $('#two').attr('class').includes('square')){
-				console.log('square win!');
+				// console.log('square win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'square win!'
 			} else if ($('#one').attr('class').includes('circle') && $('#two').attr('class').includes('circle')){
-				console.log('circle win!');
+				// console.log('circle win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'circle win!'
 			} else if ($('#one').attr('class').includes('light') && $('#two').attr('class').includes('light')){
-				console.log('light win!');	
+				// console.log('light win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'light win!'	
 			} else if ($('#one').attr('class').includes('big') && $('#two').attr('class').includes('big')){
-				console.log('big win!');
+				// console.log('big win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'big win!'
 			} else if ($('#one').attr('class').includes('small') && $('#two').attr('class').includes('small')){
-				console.log('small win!');
+				// console.log('small win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'small win!'
 			}
 		}	
 		// two and four
 		if (spotsInPlayId.includes('two') === true &&  spotsInPlayId.includes('four') === true){
-		console.log('numbers two and four');
+		// console.log('numbers two and four');
 			if($('#two').attr('class').includes('dark') && $('#four').attr('class').includes('dark')) {
-				console.log('dark win!');
-			} else if ($('#one').attr('class').includes('square') && $('#four').attr('class').includes('square')){
-				console.log('square win!');
+				// console.log('dark win!');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'dark win!'
+			} else if ($('#two').attr('class').includes('square') && $('#four').attr('class').includes('square')){
+				// console.log('square win!');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'square win!'
 			} else if ($('#two').attr('class').includes('circle') && $('#four').attr('class').includes('circle')){
-				console.log('circle win!');
+				// console.log('circle win!');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'circle win!'
 			} else if ($('#two').attr('class').includes('light') && $('#four').attr('class').includes('light')){
-				console.log('light win!');	
+				// console.log('light win!');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'light win!'	
 			} else if ($('#two').attr('class').includes('big') && $('#four').attr('class').includes('big')){
-				console.log('big win!');
+				// console.log('big win!');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'big win!'
 			} else if ($('#two').attr('class').includes('small') && $('#four').attr('class').includes('small')){
-				console.log('small win!');
+				// console.log('small win!');
+				$('#two').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#four').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'small win!'
 			}
 		}	
 	}
@@ -110,20 +194,6 @@ function choosePlacement(gamePiece, spotOnBoard){
 	checkWinner();
 };
 
-	// when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
-	// Possible ways to win:
-	// 1 3
-	// 3 4
-	// 1 2
-	// 2 4
-	
-	// Qualitites to check to win;
-	// big
-	// small
-	// square
-	// circle
-	// dark
-	// light
 
 $('#A').on('click', selectPiece);
 
@@ -135,12 +205,12 @@ $('#D').on('click', selectPiece);
 
 
 
-$('#one').on('click', choosePlacement);
+spotOne.on('click', choosePlacement);
 
-$('#two').on('click', choosePlacement);
+spotTwo.on('click', choosePlacement);
 
-$('#three').on('click', choosePlacement);
+spotThree.on('click', choosePlacement);
 
-$('#four').on('click', choosePlacement);
+spotFour.on('click', choosePlacement);
 
 	

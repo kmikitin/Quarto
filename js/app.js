@@ -40,19 +40,59 @@ function choosePlacement(gamePiece, spotOnBoard){
 
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
-	for(let i = 0; i < spotsInPlay.length; i++){
-		// what type of data is spotsInPlay
-		console.log(typeof spotsInPlay[i]);
-		// what info lives in there? Where is the class?
-		console.log(spotsInPlay[i]);
-		// get the classes of the spotsInPlay
-		console.log($(spotsInPlay)[i].attr('class'));
-		console.log($(spotsInPlay)[i].attr('class').includes('hole'))
-		// if()
+// the pseudocode and notes on how this works are inside of 'mini.js'
+	// this is me figuring stuff out:
+	// // what type of data is spotsInPlay
+	// console.log(typeof spotsInPlay[i]);
+	// // what info lives in there? Where is the class?
+	// console.log(spotsInPlay[i]);
+	// // get the classes of the spotsInPlay
+	// console.log($(spotsInPlay)[i].attr('class'));
+	// console.log($(spotsInPlay)[i].attr('class').includes('hole'))
+	function compareQualities(quality){
+		$('#one').attr('class').includes(quality) && $('#three').attr('class').includes(quality)
 	}
-// when a win is determined the winning pieces need to be highlighted, maybe a modal to announce it
+
+	console.log(compareQualities('dark'))
+
+	// 1 3 6 10
+	if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('three') === true && spotsInPlayId.includes('six') && spotsInPlayId.includes('ten')){
+		console.log('numbers 1 3 6 10');
+			if($('#one', ).attr('class').includes('dark') && $('#three').attr('class').includes('dark') &&) {
+				// console.log('dark win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				// have to return to exit the loop
+				return 'dark win!'
+			} else if ($('#one').attr('class').includes('square') && $('#three').attr('class').includes('square')){
+				// console.log('square win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'square win!'
+			} else if ($('#one').attr('class').includes('circle') && $('#three').attr('class').includes('circle')){
+				// console.log('circle win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'circle win!'
+			} else if ($('#one').attr('class').includes('light') && $('#three').attr('class').includes('light')){
+				// console.log('light win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'light win!'	
+			} else if ($('#one').attr('class').includes('big') && $('#three').attr('class').includes('big')){
+				// console.log('big win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'big win!'
+			} else if ($('#one').attr('class').includes('small') && $('#three').attr('class').includes('small')){
+				// console.log('small win!');
+				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
+				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				return 'small win!'
+			}
+		}			
+
 // Possible ways to win:
-// 1 3 6 10
 // 1 2 4 7
 // 10 13 15 16
 // 7 11 14 16
@@ -148,7 +188,11 @@ $('#sixteen').on('click', choosePlacement);
 
 
 /*
+How to make it so that more than one piece can't be selected at a time?
+
 need to make sure that more than one piece can't be selected: so they can select one, and deselect it, but not have mutliple selected at a time
+
+pieces can still be moved when placed on the board! Need to make them unclickable once they are placed. 
 
 after win new game button will reset the board and move pieces back to their container
 
@@ -172,8 +216,8 @@ small
 square
 circle
 hole 
-flat
+smooth
+dark
+light
 --make these all classes
-
-How to make it so that more than one piece can't be selected at a time?
 */
