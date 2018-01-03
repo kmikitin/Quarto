@@ -2,6 +2,22 @@ console.log('Connected!')
 
 let currentPiece = '';
 const spotsInPlay = [];
+const spotOne = $('#one');
+const spotTwo = $('#two');
+const spotThree = $('#three');
+const spotFour = $('#four');
+const spotFive = $('#five');
+const spotSix = $('#six')
+const spotSeven = $('#seven')
+const spotEight = $('#eight')
+const spotNine = $('#nine')
+const spotTen = $('#ten')
+const spotEleven = $('#eleven')
+const spotTwelve = $('#twelve')
+const spotThirteen = $('#thirteen')
+const spotFourteen = $('#fourteen')
+const spotFifteen = $('#fifteen')
+const spotSixteen = $('#sixteen')
 
 function selectPiece(evt){
 	// when the user selects a piece, highlight it by changing the border to salmon
@@ -17,27 +33,6 @@ function selectPiece(evt){
 	// console.log(this);
 };
 
-// when the piece is selected it is passed into a function as an argument
-// *when piece is moved the inner circle color needs to be changed to white
-
-// the second argument for that function will be the place on the board that the piece is going to
-function choosePlacement(gamePiece, spotOnBoard){
-	// grab the selected gamePiece
-	gamePiece = currentPiece;
-	// console.log(gamePiece);
-	$(gamePiece).css('border', '1px solid rgb(0, 0, 0)');
-	$(gamePiece).children().css('background-color', '#F9F8F8');
-	// grab the selected spot
-	// console.log(this)
-	spotOnBoard = this;
-	// append the gamePiece to the spot
-	$(gamePiece).appendTo($(spotOnBoard));
-	// add the class of the game piece to the spot (classes will be checked by checkWinner)
-	// console.log($(gamePiece).attr('class'))
-	$(spotOnBoard).addClass($(gamePiece).attr('class'));
-	spotsInPlay.push($(spotOnBoard));
-};
-
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
 function checkWinner(){
 // the pseudocode and notes on how this works are inside of 'mini.js'
@@ -49,11 +44,16 @@ function checkWinner(){
 	// // get the classes of the spotsInPlay
 	// console.log($(spotsInPlay)[i].attr('class'));
 	// console.log($(spotsInPlay)[i].attr('class').includes('hole'))
-	function compareQualities(quality){
-		$('#one').attr('class').includes(quality) && $('#three').attr('class').includes(quality)
-	}
+	function compareQualities(spot1, spot2, spot3, spot4, quality){
+		return $(spot1).attr('class').includes(quality) && $(spot2).attr('class').includes(quality) && $(spot3).attr('class').includes(quality) && $(spot4).attr('class').includes(quality)
+	};
 
-	console.log(compareQualities('dark'))
+	function highlightWin(spot1, spot2, spot3, spot4){
+		spot1.children().css('border', '6px solid rgb(235, 148, 134)');
+		spot2.children().css('border', '6px solid rgb(235, 148, 134)');
+		spot3.children().css('border', '6px solid rgb(235, 148, 134)');
+		spot4.children().css('border', '6px solid rgb(235, 148, 134)');
+	};
 
 	// 1 3 6 10
 	if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('three') === true && spotsInPlayId.includes('six') && spotsInPlayId.includes('ten')){
@@ -116,6 +116,28 @@ function checkWinner(){
 
 };
 
+// when the piece is selected it is passed into a function as an argument
+// *when piece is moved the inner circle color needs to be changed to white
+
+// the second argument for that function will be the place on the board that the piece is going to
+function choosePlacement(gamePiece, spotOnBoard){
+	// grab the selected gamePiece
+	gamePiece = currentPiece;
+	// console.log(gamePiece);
+	$(gamePiece).css('border', '1px solid rgb(0, 0, 0)');
+	$(gamePiece).children().css('background-color', '#F9F8F8');
+	// grab the selected spot
+	// console.log(this)
+	spotOnBoard = this;
+	// append the gamePiece to the spot
+	$(gamePiece).appendTo($(spotOnBoard));
+	// add the class of the game piece to the spot (classes will be checked by checkWinner)
+	// console.log($(gamePiece).attr('class'))
+	$(spotOnBoard).addClass($(gamePiece).attr('class'));
+	spotsInPlay.push($(spotOnBoard));
+	checkWinner();
+};
+
 // GAME PIECES:
 // each game piece div needs an event listener
 // on the click the piece will be highlighted (salmon color)
@@ -154,37 +176,37 @@ $('#P').on('click', selectPiece);
 
 // SPOTS ON THE BOARD:
 // each spot on the board needs an event listener
-$('#one').on('click', choosePlacement);
+spotOne.on('click', choosePlacement);
 
-$('#two').on('click', choosePlacement);
+spotTwo.on('click', choosePlacement);
 
-$('#three').on('click', choosePlacement);
+spotThree.on('click', choosePlacement);
 
-$('#four').on('click', choosePlacement);
+spotFour.on('click', choosePlacement);
 
-$('#five').on('click', choosePlacement);
+spotFive.on('click', choosePlacement);
 
-$('#six').on('click', choosePlacement);
+spotSix.on('click', choosePlacement);
 
-$('#seven').on('click', choosePlacement);
+spotSeven.on('click', choosePlacement);
 
-$('#eight').on('click', choosePlacement);
+spotEight.on('click', choosePlacement);
 
-$('#nine').on('click', choosePlacement);
+spotNine.on('click', choosePlacement);
 
-$('#ten').on('click', choosePlacement);
+spotTen.on('click', choosePlacement);
 
-$('#eleven').on('click', choosePlacement);
+spotEleven.on('click', choosePlacement);
 
-$('#twelve').on('click', choosePlacement);
+spotTwelve.on('click', choosePlacement);
 
-$('#thirteen').on('click', choosePlacement);
+spotThirteen.on('click', choosePlacement);
 
-$('#fourteen').on('click', choosePlacement);
+spotFourteen.on('click', choosePlacement);
 
-$('#fifteen').on('click', choosePlacement);
+spotFifteen.on('click', choosePlacement);
 
-$('#sixteen').on('click', choosePlacement);
+spotSixteen.on('click', choosePlacement);
 
 
 /*
