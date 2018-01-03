@@ -18,19 +18,17 @@ function selectPiece(evt){
 };
 
 
-
-// console.log(compareQualities('dark'))
-
-function highlightWin(){
-
-}
-
 function checkWinner(){
 	// this function is evaluating what was on the first line of my if statements
 	function compareQualities(spot1, spot2, quality){
 		// take two spots on the board, and one of the qualities(found in the classes of the spot, which were given to it by the game piece), see if the quality is present in both spots, if so return true (which is what includes does)
 		return $(spot1).attr('class').includes(quality) && $(spot2).attr('class').includes(quality)
-	}
+	};
+
+	function highlightWin(spot1, spot2){
+		spot1.children().css('border', '6px solid rgb(235, 148, 134)');
+		spot2.children().css('border', '6px solid rgb(235, 148, 134)');
+	};
 
 	for(let i = 0; i < spotsInPlayId.length; i++){
 		// check each of the 4 board configurations that make a win
@@ -42,31 +40,30 @@ function checkWinner(){
 		// console.log('numbers 1 and 3');
 			if(compareQualities(spotOne, spotThree, 'dark') === true) {
 				// console.log('dark win!');
-				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
-				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
+				highlightWin(spotOne, spotThree);
 				// have to return to exit the loop
 				return 'dark win!'
-			} else if ($('#one').attr('class').includes('square') && $('#three').attr('class').includes('square')){
+			} else if (compareQualities(spotOne, spotThree, 'square')){
 				// console.log('square win!');
 				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
 				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'square win!'
-			} else if ($('#one').attr('class').includes('circle') && $('#three').attr('class').includes('circle')){
+			} else if (compareQualities(spotOne, spotThree, 'circle')){
 				// console.log('circle win!');
 				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
 				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'circle win!'
-			} else if ($('#one').attr('class').includes('light') && $('#three').attr('class').includes('light')){
+			} else if (compareQualities(spotOne, spotThree, 'light')){
 				// console.log('light win!');
 				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
 				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'light win!'	
-			} else if ($('#one').attr('class').includes('big') && $('#three').attr('class').includes('big')){
+			} else if (compareQualities(spotOne, spotThree, 'big')){
 				// console.log('big win!');
 				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
 				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
 				return 'big win!'
-			} else if ($('#one').attr('class').includes('small') && $('#three').attr('class').includes('small')){
+			} else if (compareQualities(spotOne, spotThree, 'small')){
 				// console.log('small win!');
 				$('#one').children().css('border', '6px solid rgb(235, 148, 134)');
 				$('#three').children().css('border', '6px solid rgb(235, 148, 134)');
