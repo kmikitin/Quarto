@@ -11,7 +11,8 @@
 	<header>
 		<h1>QUARTO
 			<br>
-			<button class="button" id="new-game">New Game</button>
+			<button id="begin-game">Begin Game</button>
+			<button id="new-game">New Game</button>
 	    </h1>
 	</header>
 
@@ -46,6 +47,7 @@
 				<li>Four hollow pieces</li>
 			</ol>
 	</div>
+
 	<div class="board">
 		<div class="row" id="row1">
 			<div class="spot" id="one"></div>
@@ -78,6 +80,7 @@
 			<div class="spot" id="sixteen"></div>
 		</div>
 	</div>
+
 	<div class="game-pieces">
 		<div class="big square dark smooth" id="A"></div>
 		<div class="small circle light hole " id="P">
@@ -112,6 +115,12 @@
 			<div class="inner-circle" id="big"></div>
 		</div>
 	</div>
+
+	<div class="modal" id="modal">
+		<button id="close-modal">X</button>
+		<p class="modal-text">Player one choose a piece &#8594;</p>
+	</div>
+	<div class="modal-overlay"></div>
 	
 <script type="text/javascript" src="js/app.js"></script>
 </body>

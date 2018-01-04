@@ -7,17 +7,19 @@ const spotTwo = $('#two');
 const spotThree = $('#three');
 const spotFour = $('#four');
 const spotFive = $('#five');
-const spotSix = $('#six')
-const spotSeven = $('#seven')
-const spotEight = $('#eight')
-const spotNine = $('#nine')
-const spotTen = $('#ten')
-const spotEleven = $('#eleven')
-const spotTwelve = $('#twelve')
-const spotThirteen = $('#thirteen')
-const spotFourteen = $('#fourteen')
-const spotFifteen = $('#fifteen')
-const spotSixteen = $('#sixteen')
+const spotSix = $('#six');
+const spotSeven = $('#seven');
+const spotEight = $('#eight');
+const spotNine = $('#nine');
+const spotTen = $('#ten');
+const spotEleven = $('#eleven');
+const spotTwelve = $('#twelve');
+const spotThirteen = $('#thirteen');
+const spotFourteen = $('#fourteen');
+const spotFifteen = $('#fifteen');
+const spotSixteen = $('#sixteen');
+const theModal = $('.modal');
+const modalText = $('.modal-text');
 
 function selectPiece(evt){
 	// when the user selects a piece, highlight it by changing the border to salmon
@@ -451,6 +453,28 @@ function resetGame(){
 	spotsInPlayId = [];
 };
 
+// this button reveals the modal that tells you how to play, also reveals the overlay that keeps folks from clicking on anything but the close button
+$('#begin-game').on('click', ()=>{
+	// console.log('clicked')
+	theModal.css('display', 'block');
+	$('.modal-overlay').css('display', 'block');
+	$('#begin-game').remove()
+})
+
+// this button 'closes' the modal, and then changes the text for the next pop up
+$('#close-modal').on('click', ()=>{
+	theModal.css('display', 'none');
+	$('.modal-overlay').css('display', 'none');
+	modalText.text('Player two choose a placement')
+})
+
+// this button reveals the modal again
+$('.game-pieces').one('click', ()=>{
+	// console.log('clicked')
+	theModal.css('display', 'block');
+})
+
+
 // GAME PIECES:
 // each game piece div needs an event listener
 // on the click the piece will be highlighted (salmon color)
@@ -521,6 +545,8 @@ spotFifteen.on('click', choosePlacement);
 
 spotSixteen.on('click', choosePlacement);
 
+
+// button to reset the board
 $('#new-game').on('click', resetGame)
 
 
