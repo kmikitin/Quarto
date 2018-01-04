@@ -7,12 +7,45 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+
 	<header>
 		<h1>QUARTO
 			<br>
 			<button class="button" id="new-game">New Game</button>
 	    </h1>
 	</header>
+
+	<div class="instructions">
+		<span class="about">About the Game:</span>
+			<br>
+			<span>Description and Objective:</span>
+			<ul>
+				<li>There are 16 spots on the board, and 16 different pieces with 4 characteristics: yellow or purple, round or square, big or little, and solid or hollow.</li>
+				<li>The objective of the game is to establish a line of four pieces with at least one characteristic in common.</li>
+				<li>The line of pieces can be in any configuration on the board.</li>
+				<li>The player with the closest birthday goes first.</li>
+			</ul>
+			<br>
+			<span>How to Play:</span>
+			<ul>
+				<li>The first player will select one of the 16 pieces by clicking on it.</li>
+				<li>The second player will click on the spot on the board where they want that piece to go.</li>
+				<li>It is then the second player's turn to select which piece their opponent will play, with the first player choosing where it goes, and so on.</li>
+			</ul>
+			<br>
+			<span>Winning:</span>
+			There are eight ways to win the game, they are -
+			<ol>
+				<li>Four yellow pieces</li>
+				<li>Four purple pieces</li>
+				<li>Four square pieces</li>
+				<li>Four round pieces</li>
+				<li>Four small pieces</li>
+				<li>Four big pieces</li>
+				<li>Four solid pieces</li>
+				<li>Four hollow pieces</li>
+			</ol>
+	</div>
 	<div class="board">
 		<div class="row" id="row1">
 			<div class="spot" id="one"></div>
@@ -47,10 +80,15 @@
 	</div>
 	<div class="game-pieces">
 		<div class="big square dark smooth" id="A"></div>
+		<div class="small circle light hole " id="P">
+			<div class="inner-circle"></div>
+		</div>
 		<div class="big square dark hole" id="B">
 			<div class="inner-circle" id="big"></div>
 		</div>
 		<div class="big circle dark smooth" id="C"></div>
+		<div class="big circle light smooth" id="K"></div>
+		<div class="small square light smooth" id="M"></div>
 		<div class="big circle dark hole" id="D">
 			<div class="inner-circle" id="big"></div>
 		</div>
@@ -58,7 +96,14 @@
 			<div class="inner-circle"></div>
 		</div>
 		<div class="small square dark smooth" id="F"></div>
+		<div class="big circle light hole" id="L">
+			<div class="inner-circle" id="big"></div>
+		</div>
 		<div class="small circle dark smooth" id="G"></div>
+		<div class="small square light hole" id="N">
+			<div class="inner-circle"></div>
+		</div>
+		<div class="small circle light smooth" id="O"></div>
 		<div class="small circle dark hole" id="H">
 			<div class="inner-circle"></div>
 		</div>
@@ -66,29 +111,8 @@
 		<div class="big square light hole" id="J">
 			<div class="inner-circle" id="big"></div>
 		</div>
-		<div class="big circle light smooth" id="K"></div>
-		<div class="big circle light hole" id="L">
-			<div class="inner-circle" id="big"></div>
-		</div>
-		<div class="small square light smooth" id="M"></div>
-		<div class="small square light hole" id="N">
-			<div class="inner-circle"></div>
-		</div>
-		<div class="small circle light smooth" id="O"></div>
-		<div class="small circle light hole " id="P">
-			<div class="inner-circle"></div>
-		</div>
-		<div id="box"></div>
 	</div>
-	<div class="instructions">
-		Game Instructions:
-		<ol>
-			<li>thing</li>
-			<li>thing</li>
-			<li>thing</li>
-			<li>thing</li>
-		</ol>
-	</div>
+	
 <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

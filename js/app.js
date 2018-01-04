@@ -1,7 +1,7 @@
 console.log('Connected!')
 
 let currentPiece = '';
-const spotsInPlayId = [];
+let spotsInPlayId = [];
 const spotOne = $('#one');
 const spotTwo = $('#two');
 const spotThree = $('#three');
@@ -441,12 +441,14 @@ function choosePlacement(gamePiece, spotOnBoard){
 };
 
 function resetGame(){
-	console.log('clicked!')
+	// console.log('clicked!')
 	for(let i = 0; i < spotsInPlayId.length; i++){
 		let id = '#' + spotsInPlayId[i]
-		console.log(id)
-		$(id).children().css('border', '1px solid black').appendTo($('.game-pieces'))
-	}
+		// console.log(id)
+		$(id).children().css('border', '1px solid rgb(0, 0, 0)').appendTo($('.game-pieces'))
+	};
+	$('.inner-circle').css('background-color', '#7E7F9A');
+	spotsInPlayId = [];
 };
 
 // GAME PIECES:
