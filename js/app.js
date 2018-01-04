@@ -56,6 +56,11 @@ function checkWinner(){
 		spot3.children().css('border', '6px solid rgb(235, 148, 134)');
 		spot4.children().css('border', '6px solid rgb(235, 148, 134)');
 	};
+
+	function showModal(quality){
+		modalText.text('Four ' + quality + ' in a row, you win!')
+		theModal.css('display', 'block')
+	}
 	
 	for(let i = 0; i < spotsInPlayId.length; i++){
 	// 1 3 6 10
@@ -63,33 +68,41 @@ function checkWinner(){
 			console.log('numbers 1 3 6 10');
 			if(compareQualities(spotOne, spotThree, spotSix, spotTen, 'dark')) {
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('purple pieces')
 				// have to return to exit the loop
 				return 'dark win!';
 			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'square')){
 				// console.log('square win!');
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('square pieces')
 				return 'square win!'
 			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'circle')){
 				// console.log('circle win!');
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('circle pieces')
 				return 'circle win!'
 			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'light')){
 				// console.log('light win!');
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('yellow pieces')
 				return 'light win!'	
 			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'big')){
 				// console.log('big win!');
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('big pieces')
 				return 'big win!'
 			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'small')){
 				// console.log('small win!');
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('small pieces')
 				return 'small win!'
 			} else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'hole')){
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('hollow pieces')
 				return 'hole win!'
 			}else if (compareQualities(spotOne, spotThree, spotSix, spotTen, 'smooth')){
 				highlightWin(spotOne, spotThree, spotSix, spotTen);
+				showModal('smooth pieces')
 				return 'smooth win!'
 			}
 		}
@@ -450,6 +463,7 @@ function resetGame(){
 		$(id).children().css('border', '1px solid rgb(0, 0, 0)').appendTo($('.game-pieces'))
 	};
 	$('.inner-circle').css('background-color', '#7E7F9A');
+	$('.spot').removeClass().addClass('spot')
 	spotsInPlayId = [];
 };
 
