@@ -22,6 +22,10 @@ button {
 	/*vertical-align: middle;*/
 }
 
+#new-game {
+	display: none;
+}
+
 /*container div for the board spaces*/
 .board {
 	display: inline-flex;

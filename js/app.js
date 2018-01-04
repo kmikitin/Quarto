@@ -459,6 +459,7 @@ $('#begin-game').on('click', ()=>{
 	theModal.css('display', 'block');
 	$('.modal-overlay').css('display', 'block');
 	$('#begin-game').remove()
+	$('#new-game').css('display', 'inline')
 })
 
 // this button 'closes' the modal, and then changes the text for the next pop up
