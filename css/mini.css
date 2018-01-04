@@ -1,6 +1,6 @@
 .board {
 	display: inline-flex;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	flex-direction: column;
 	height: 250px;
 	width: 250px;
@@ -33,9 +33,10 @@
 	justify-content: center;
 	height: 250px;
 	width: 250px;
-	border: 1px solid black; 
+	/*border: 1px solid black; */
 	color: white;
 	text-align: center;
+	vertical-align: top;
 }
 
 #A, #C {
@@ -87,5 +88,6 @@
 	border: 1px solid black;
 	padding: 1%;
 	background-color: #F9F8F8;
+	vertical-align: top;
 }
 

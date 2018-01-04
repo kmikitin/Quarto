@@ -191,6 +191,20 @@ function choosePlacement(gamePiece, spotOnBoard){
 	checkWinner();
 };
 
+function resetGame(){
+	for(let i = 0; i < spotsInPlayId.length; i++){
+		// console.log(spotsInPlayId[i])
+		let id = '#' + spotsInPlayId[i]
+		// console.log(typeof id)
+		// console.log($(id).children())
+		$(id).children().css('border', '1px solid black').appendTo($('.game-pieces'))
+	}
+	// spotOne.children().css('border', '1px solid black').appendTo($('.game-pieces'))
+	// spotTwo.children().css('border', '1px solid black').appendTo($('.game-pieces'))
+	// spotThree.children().css('border', '1px solid black').appendTo($('.game-pieces'))
+	// spotFour.children().css('border', '1px solid black').appendTo($('.game-pieces'))
+};
+
 
 $('#A').on('click', selectPiece);
 
@@ -209,5 +223,7 @@ spotTwo.on('click', choosePlacement);
 spotThree.on('click', choosePlacement);
 
 spotFour.on('click', choosePlacement);
+
+$('.new-game').on('click', resetGame)
 
 	

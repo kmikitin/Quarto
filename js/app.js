@@ -440,6 +440,15 @@ function choosePlacement(gamePiece, spotOnBoard){
 	checkWinner();
 };
 
+function resetGame(){
+	console.log('clicked!')
+	for(let i = 0; i < spotsInPlayId.length; i++){
+		let id = '#' + spotsInPlayId[i]
+		console.log(id)
+		$(id).children().css('border', '1px solid black').appendTo($('.game-pieces'))
+	}
+};
+
 // GAME PIECES:
 // each game piece div needs an event listener
 // on the click the piece will be highlighted (salmon color)
@@ -509,6 +518,8 @@ spotFourteen.on('click', choosePlacement);
 spotFifteen.on('click', choosePlacement);
 
 spotSixteen.on('click', choosePlacement);
+
+$('#new-game').on('click', resetGame)
 
 
 /*
