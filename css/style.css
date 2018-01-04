@@ -5,18 +5,32 @@ body {
 
 header {
 	text-align: center;
+	/*border: 1px solid black;*/
 }
 
 h1 {
 	font-size: 60px;
 	font-weight: bold;
+	margin: 0 0 20px 0;
+	/*border: 1px solid black;*/
+}
+
+.button {
+	background-color: #EB9486;
+	border: 2px solid black;
+	width: 100px;
+	height: 50px;
+	font-weight: bold;
+	font-size: 16px;
+	vertical-align: middle;
 }
 
 /*container div for the board spaces*/
 .board {
 	display: inline-flex;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	flex-direction: column;
+	vertical-align: top;
 	height: 750px;
 	width: 750px;
 }
@@ -31,16 +45,6 @@ h1 {
 
 #row0 {
 	justify-content: flex-start;
-}
-
-.button {
-	background-color: #EB9486;
-	border: 2px solid black;
-	width: 24%;
-	height: 50%;
-	margin: 1%;
-	font-weight: bold;
-	font-size: 16px;
 }
 
 /*board spaces*/
@@ -78,14 +82,15 @@ h1 {
 	display: inline-flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-/*	justify-content: space-around;
-	align-content: space-around;*/
+	justify-content: space-around;
+	align-content: space-around;
 	height: 400px;
 	width: 400px;
 	/*margin-top: 200px;*/
-	border: 1px solid black; 
+	/*border: 1px solid black; */
 	color: white;
 	text-align: center;
+	vertical-align: top;
 }
 
 /*plumb colored pieces*/
@@ -155,14 +160,15 @@ h1 {
 }
 
 /*this is an anchor box to control the unruly game piece div*/
-#box {
+/*#box {
 	height: 10px;
 	width: 10px;
-}
+}*/
 
 .instructions {
 	display: inline-flex;
 	flex-direction: column;
+	vertical-align: top;
 	width: 200px;
 	border: 1px solid black;
 	padding: 1%;

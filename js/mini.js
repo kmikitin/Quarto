@@ -24,7 +24,7 @@ function checkWinner(){
 		// take two spots on the board, and one of the qualities(found in the classes of the spot, which were given to it by the game piece), see if the quality is present in both spots, if so return true (which is what includes does)
 		return $(spot1).attr('class').includes(quality) && $(spot2).attr('class').includes(quality)
 	};
-
+	// this function changes the spots on the board to have a bright salmon color when the configuration is a win
 	function highlightWin(spot1, spot2){
 		spot1.children().css('border', '6px solid rgb(235, 148, 134)');
 		spot2.children().css('border', '6px solid rgb(235, 148, 134)');
