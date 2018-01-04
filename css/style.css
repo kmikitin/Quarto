@@ -102,32 +102,32 @@ h1 {
 
 /*big pieces - square*/
 #A, #B, #I, #J {
-	height: 65px;
-	width: 65px;
+	height: 60px;
+	width: 60px;
 	border-radius: 5px;
 	margin: 1%;
 }
 
 /*big pieces - circle*/
 #C, #D, #K, #L {
-	height: 65px;
-	width: 65px;
+	height: 60px;
+	width: 60px;
 	border-radius: 50%;
 	margin: 1%;
 }
 
 /*little pieces - square*/
 #E, #F, #M, #N {
-	height: 45px;
-	width: 45px;
+	height: 40px;
+	width: 40px;
 	border-radius: 10px;
 	margin: 1%;
 }
 
 /*little pieces - circle*/
 #G, #H, #O, #P {
-	height: 45px;
-	width: 45px;
+	height: 40px;
+	width: 40px;
 	border-radius: 50%;
 	margin: 1%;
 }

@@ -22,7 +22,7 @@ const spotSixteen = $('#sixteen')
 function selectPiece(evt){
 	// when the user selects a piece, highlight it by changing the border to salmon
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
-		$(evt.currentTarget).css('border', '6px solid #EB9486')
+		$(evt.currentTarget).css('border', '6px solid rgb(235, 148, 134)')
 		currentPiece = evt.currentTarget;
 		// console.log($(evt.currentTarget).css('border'))
 		// if the border is salmon and the user clicks again, change it back to black to deselect
@@ -127,29 +127,295 @@ function checkWinner(){
 				return 'smooth win!'
 			}
 		}
+
+		// 10 13 15 16
+		if(spotsInPlayId.includes('ten') === true &&  spotsInPlayId.includes('thirteen') === true && spotsInPlayId.includes('fifteen') === true && spotsInPlayId.includes('sixteen') === true){
+			console.log('numbers 10 13 15 16');
+			if(compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'dark')) {
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'square')){
+				// console.log('square win!');
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				return 'square win!'
+			} else if (compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				return 'circle win!'
+			} else if (compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'light')){
+				// console.log('light win!');
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				return 'light win!'	
+			} else if (compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'big')){
+				// console.log('big win!');
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				return 'big win!'
+			} else if (compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'small')){
+				// console.log('small win!');
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				return 'small win!'
+			} else if (compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'hole')){
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				return 'hole win!'
+			}else if (compareQualities(spotTen, spotThirteen, spotFifteen, spotSixteen, 'smooth')){
+				highlightWin(spotTen, spotThirteen, spotFifteen, spotSixteen);
+				return 'smooth win!'
+			}
+		}
+
+		// 7 11 14 16
+		if(spotsInPlayId.includes('seven') === true &&  spotsInPlayId.includes('eleven') === true && spotsInPlayId.includes('fourteen') === true && spotsInPlayId.includes('sixteen') === true){
+			console.log('numbers 7 11 14 16');
+			if(compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'dark')) {
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'square')){
+				// console.log('square win!');
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				return 'square win!'
+			} else if (compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				return 'circle win!'
+			} else if (compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'light')){
+				// console.log('light win!');
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				return 'light win!'	
+			} else if (compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'big')){
+				// console.log('big win!');
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				return 'big win!'
+			} else if (compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'small')){
+				// console.log('small win!');
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				return 'small win!'
+			} else if (compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'hole')){
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				return 'hole win!'
+			}else if (compareQualities(spotSeven, spotEleven, spotFourteen, spotSixteen, 'smooth')){
+				highlightWin(spotSeven, spotEleven, spotFourteen, spotSixteen);
+				return 'smooth win!'
+			}
+		}
+
+		// 1 5 12 16
+		if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('five') === true && spotsInPlayId.includes('twelve') === true && spotsInPlayId.includes('sixteen') === true){
+			console.log('numbers 1 5 12 16');
+			if(compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'dark')) {
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'square')){
+				// console.log('square win!');
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				return 'square win!'
+			} else if (compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				return 'circle win!'
+			} else if (compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'light')){
+				// console.log('light win!');
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				return 'light win!'	
+			} else if (compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'big')){
+				// console.log('big win!');
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				return 'big win!'
+			} else if (compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'small')){
+				// console.log('small win!');
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				return 'small win!'
+			} else if (compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'hole')){
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				return 'hole win!'
+			}else if (compareQualities(spotOne, spotFive, spotTwelve, spotSixteen, 'smooth')){
+				highlightWin(spotOne, spotFive, spotTwelve, spotSixteen);
+				return 'smooth win!'
+			}
+		}
+
+		// 7 8 9 10
+		if(spotsInPlayId.includes('seven') === true &&  spotsInPlayId.includes('eight') === true && spotsInPlayId.includes('nine') === true && spotsInPlayId.includes('ten') === true){
+			console.log('numbers 7 8 9 10');
+			if(compareQualities(spotSeven, spotEight, spotNine, spotTen, 'dark')) {
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotSeven, spotEight, spotNine, spotTen, 'square')){
+				// console.log('square win!');
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				return 'square win!'
+			} else if (compareQualities(spotSeven, spotEight, spotNine, spotTen, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				return 'circle win!'
+			} else if (compareQualities(spotSeven, spotEight, spotNine, spotTen, 'light')){
+				// console.log('light win!');
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				return 'light win!'	
+			} else if (compareQualities(spotSeven, spotEight, spotNine, spotTen, 'big')){
+				// console.log('big win!');
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				return 'big win!'
+			} else if (compareQualities(spotSeven, spotEight, spotNine, spotTen, 'small')){
+				// console.log('small win!');
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				return 'small win!'
+			} else if (compareQualities(spotSeven, spotEight, spotNine, spotTen, 'hole')){
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				return 'hole win!'
+			}else if (compareQualities(spotSeven, spotEight, spotNine, spotTen, 'smooth')){
+				highlightWin(spotSeven, spotEight, spotNine, spotTen);
+				return 'smooth win!'
+			}
+		}
+
+		// 3 5 8 11
+		if(spotsInPlayId.includes('three') === true &&  spotsInPlayId.includes('five') === true && spotsInPlayId.includes('eight') === true && spotsInPlayId.includes('eleven') === true){
+			console.log('numbers 3 5 8 11');
+			if(compareQualities(spotThree, spotFive, spotEight, spotEleven, 'dark')) {
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotThree, spotFive, spotEight, spotEleven, 'square')){
+				// console.log('square win!');
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				return 'square win!'
+			} else if (compareQualities(spotThree, spotFive, spotEight, spotEleven, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				return 'circle win!'
+			} else if (compareQualities(spotThree, spotFive, spotEight, spotEleven, 'light')){
+				// console.log('light win!');
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				return 'light win!'	
+			} else if (compareQualities(spotThree, spotFive, spotEight, spotEleven, 'big')){
+				// console.log('big win!');
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				return 'big win!'
+			} else if (compareQualities(spotThree, spotFive, spotEight, spotEleven, 'small')){
+				// console.log('small win!');
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				return 'small win!'
+			} else if (compareQualities(spotThree, spotFive, spotEight, spotEleven, 'hole')){
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				return 'hole win!'
+			}else if (compareQualities(spotThree, spotFive, spotEight, spotEleven, 'smooth')){
+				highlightWin(spotThree, spotFive, spotEight, spotEleven);
+				return 'smooth win!'
+			}
+		}
+
+		// 6 9 12 14
+		if(spotsInPlayId.includes('six') === true &&  spotsInPlayId.includes('nine') === true && spotsInPlayId.includes('twelve') === true && spotsInPlayId.includes('fourteen') === true){
+			console.log('numbers 6 9 12 14');
+			if(compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'dark')) {
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'square')){
+				// console.log('square win!');
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				return 'square win!'
+			} else if (compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				return 'circle win!'
+			} else if (compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'light')){
+				// console.log('light win!');
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				return 'light win!'	
+			} else if (compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'big')){
+				// console.log('big win!');
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				return 'big win!'
+			} else if (compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'small')){
+				// console.log('small win!');
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				return 'small win!'
+			} else if (compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'hole')){
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				return 'hole win!'
+			}else if (compareQualities(spotSix, spotNine, spotTwelve, spotFourteen, 'smooth')){
+				highlightWin(spotSix, spotNine, spotTwelve, spotFourteen);
+				return 'smooth win!'
+			}
+		}
+
+		// 4 8 12 15
+		if(spotsInPlayId.includes('four') === true &&  spotsInPlayId.includes('eight') === true && spotsInPlayId.includes('twelve') === true && spotsInPlayId.includes('fifteen') === true){
+			console.log('numbers 4 8 12 15');
+			if(compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'dark')) {
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'square')){
+				// console.log('square win!');
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				return 'square win!'
+			} else if (compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				return 'circle win!'
+			} else if (compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'light')){
+				// console.log('light win!');
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				return 'light win!'	
+			} else if (compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'big')){
+				// console.log('big win!');
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				return 'big win!'
+			} else if (compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'small')){
+				// console.log('small win!');
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				return 'small win!'
+			} else if (compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'hole')){
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				return 'hole win!'
+			}else if (compareQualities(spotFour, spotEight, spotTwelve, spotFifteen, 'smooth')){
+				highlightWin(spotFour, spotEight, spotTwelve, spotFifteen);
+				return 'smooth win!'
+			}
+		}
+
+		// 2 5 9 13
+		if(spotsInPlayId.includes('two') === true &&  spotsInPlayId.includes('five') === true && spotsInPlayId.includes('nine') === true && spotsInPlayId.includes('thirteen') === true){
+			console.log('numbers 2 5 9 13');
+			if(compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'dark')) {
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				// have to return to exit the loop
+				return 'dark win!';
+			} else if (compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'square')){
+				// console.log('square win!');
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				return 'square win!'
+			} else if (compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'circle')){
+				// console.log('circle win!');
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				return 'circle win!'
+			} else if (compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'light')){
+				// console.log('light win!');
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				return 'light win!'	
+			} else if (compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'big')){
+				// console.log('big win!');
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				return 'big win!'
+			} else if (compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'small')){
+				// console.log('small win!');
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				return 'small win!'
+			} else if (compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'hole')){
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				return 'hole win!'
+			}else if (compareQualities(spotTwo, spotFive, spotNine, spotThirteen, 'smooth')){
+				highlightWin(spotTwo, spotFive, spotNine, spotThirteen);
+				return 'smooth win!'
+			}
+		}
 	}				
-
-// Possible ways to win:
-// 10 13 15 16
-// 7 11 14 16
-// 1 5 12 16
-// 7 8 9 10
-// 3 5 8 11
-// 6 9 12 14
-// 4 8 12 15
-// 2 5 9 13
-
-// Qualitites to check to win;
-// big
-// small
-// square
-// circle
-// hole 
-// flat
-// dark
-// light
-// --make these all classes
-
 };
 
 // when the piece is selected it is passed into a function as an argument
@@ -253,29 +519,4 @@ need to make sure that more than one piece can't be selected: so they can select
 pieces can still be moved when placed on the board! Need to make them unclickable once they are placed. 
 
 after win new game button will reset the board and move pieces back to their container
-
-GAME LOGIC:
-
-Possible ways to win:
-1 3 6 10
-1 2 4 7
-10 13 15 16
-7 11 14 16
-1 5 12 16
-7 8 9 10
-3 5 8 11
-6 9 12 14
-4 8 12 15
-2 5 9 13
-
-Qualitites to check to win;
-big
-small
-square
-circle
-hole 
-smooth
-dark
-light
---make these all classes
 */
