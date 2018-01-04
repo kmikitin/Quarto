@@ -126,7 +126,7 @@ button {
 #E, #F, #M, #N {
 	height: 40px;
 	width: 40px;
-	border-radius: 10px;
+	border-radius: 5px;
 	margin: 1%;
 }
 
@@ -160,6 +160,7 @@ button {
 	width: 40px;
 }
 
+/*the div that holds the 'about game' info*/
 .instructions {
 	display: inline-flex;
 	flex-direction: column;
@@ -176,6 +177,7 @@ span {
 	font-size: 18px;
 }
 
+/*this is the heading of the about game section*/
 .about {
 	text-transform: uppercase;
 	text-decoration: none;
@@ -187,6 +189,7 @@ ul, ol {
 	padding-left: 20px;
 }
 
+/*the actual modal box*/
 .modal {
 	position: fixed;
 	display: none;
@@ -202,6 +205,7 @@ ul, ol {
   	z-index: 2;
 }
 
+/*the overlay that locks the screen until the modal is closed*/
 .modal-overlay {
 	display: none;
 	z-index: 1;
@@ -212,6 +216,7 @@ ul, ol {
   	height: 100%;
 }
 
+/*button that closes the modal*/
 #close-modal {
 	width: 25px;
 	height: 25px;
@@ -221,6 +226,7 @@ ul, ol {
 	float: right;
 }
 
+/*styling for the inner text of the modal*/
 .modal-text {
 	text-decoration: none;
 	text-align: center;
