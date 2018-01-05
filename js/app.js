@@ -23,7 +23,7 @@ const modalText = $('.modal-text');
 const overlay = $('.modal-overlay');
 
 // function alerts the next player to which piece they will be working with by changing the border, also makes that piece active by making it the 'current piece'
-selectPiece = (evt) =>{
+function selectPiece(evt) {
 	// when the user selects a piece, highlight it by changing the border to salmon
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
 		$(evt.currentTarget).css('border', '6px solid rgb(235, 148, 134)')
@@ -38,20 +38,20 @@ selectPiece = (evt) =>{
 };
 
 // function changes the display property of the modal and its overaly to block to reveal it
-showModal = () => {
+function showModal() {
 		theModal.css('display', 'block');
 		overlay.css('display', 'block');
 };
 
 // function changes the display property of the modal and its overlay to none to hide it
-hideModal = () => {
+function hideModal() {
 	theModal.css('display', 'none');
 	overlay.css('display', 'none');
 }
 
 // the pseudocode and notes on how this works are inside of 'mini.js'
 // checkWinner function will run through all possible win combinations ON EACH CLICK ON THE BOARD***
-checkWinner = () => {
+function checkWinner() {
 	// this is me figuring stuff out:
 	// // what type of data is spotsInPlay
 	// console.log(typeof spotsInPlay[i]);
@@ -62,12 +62,12 @@ checkWinner = () => {
 	// console.log($(spotsInPlay)[i].attr('class').includes('hole'))
 
 	// function compares all the qualities (saved in the classes of the spots on the board) of the pieces in the row that is being checked, if there are four alike, it's a win!
-	compareQualities = (spot1, spot2, spot3, spot4, quality) => {
+	function compareQualities(spot1, spot2, spot3, spot4, quality) {
 		return $(spot1).attr('class').includes(quality) && $(spot2).attr('class').includes(quality) && $(spot3).attr('class').includes(quality) && $(spot4).attr('class').includes(quality)
 	};
 
 	// funciton changes the borders of all the winning pieces to the lovely salmon color ;)
-	highlightWin = (spot1, spot2, spot3, spot4) => {
+	function highlightWin(spot1, spot2, spot3, spot4) {
 		spot1.children().css('border', '6px solid rgb(235, 148, 134)');
 		spot2.children().css('border', '6px solid rgb(235, 148, 134)');
 		spot3.children().css('border', '6px solid rgb(235, 148, 134)');
@@ -75,7 +75,7 @@ checkWinner = () => {
 	};
 
 	// function displays the modal on a win, and displays the overlay so that the players can click on the board/game pieces 
-	notifyWinWithModal = (quality) => {
+	function notifyWinWithModal(quality){
 		modalText.text('Four ' + quality + ' in a row, you win!');
 		showModal()
 		$('#close-modal').remove();
@@ -531,7 +531,7 @@ checkWinner = () => {
 // the second argument for that function will be the place on the board that the piece is going to
 
 // APPARENTLY THIS CAN'T BE AN ARROW FUNCTION LEARNED THAT BY BREAKING THE GAME SOMETHING TO DO WITH THE JQUERY LIBRARY DIDN'T LOOK INTO IT FURTHER BUT IT SUUUUUUUUCKED UNTIL I FIGURED OUT WHAT HAPPENED
-function choosePlacement (gamePiece, spotOnBoard) {
+function choosePlacement(gamePiece, spotOnBoard) {
 	// grab the selected gamePiece
 	gamePiece = currentPiece;
 	// console.log(gamePiece);
@@ -550,7 +550,7 @@ function choosePlacement (gamePiece, spotOnBoard) {
 };
 
 // after win new game button will reset the board and move pieces back to their container
-resetGame = () => {
+function resetGame() {
 	// console.log('clicked!')
 	for(let i = 0; i < spotsInPlayId.length; i++){
 		let id = '#' + spotsInPlayId[i]
