@@ -529,6 +529,7 @@ function choosePlacement(gamePiece, spotOnBoard){
 	checkWinner();
 };
 
+// after win new game button will reset the board and move pieces back to their container
 function resetGame(){
 	// console.log('clicked!')
 	for(let i = 0; i < spotsInPlayId.length; i++){
@@ -559,7 +560,7 @@ $('#close-modal').on('click', ()=>{
 	modalText.text('Player two choose a placement')
 })
 
-// $('.modal').on('keydown', ()=>{
+// $('#close-modal').on('keydown', ()=>{
 // 	theModal.css('display', 'none');
 // 	$('.modal-overlay').css('display', 'none');
 // 	modalText.text('Player two choose a placement')
@@ -654,6 +655,4 @@ How to make it so that more than one piece can't be selected at a time?
 need to make sure that more than one piece can't be selected: so they can select one, and deselect it, but not have mutliple selected at a time
 
 pieces can still be moved when placed on the board! Need to make them unclickable once they are placed. 
-
-after win new game button will reset the board and move pieces back to their container
 */
