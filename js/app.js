@@ -22,6 +22,7 @@ const theModal = $('.modal');
 const modalText = $('.modal-text');
 const overlay = $('.modal-overlay');
 
+// function alerts the next player to which piece they will be working with by changing the border, also makes that piece active by making it the 'current piece'
 selectPiece = (evt) =>{
 	// when the user selects a piece, highlight it by changing the border to salmon
 	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
@@ -59,10 +60,13 @@ checkWinner = () => {
 	// // get the classes of the spotsInPlay
 	// console.log($(spotsInPlay)[i].attr('class'));
 	// console.log($(spotsInPlay)[i].attr('class').includes('hole'))
+
+	// function compares all the qualities (saved in the classes of the spots on the board) of the pieces in the row that is being checked, if there are four alike, it's a win!
 	compareQualities = (spot1, spot2, spot3, spot4, quality) => {
 		return $(spot1).attr('class').includes(quality) && $(spot2).attr('class').includes(quality) && $(spot3).attr('class').includes(quality) && $(spot4).attr('class').includes(quality)
 	};
 
+	// funciton changes the borders of all the winning pieces to the lovely salmon color ;)
 	highlightWin = (spot1, spot2, spot3, spot4) => {
 		spot1.children().css('border', '6px solid rgb(235, 148, 134)');
 		spot2.children().css('border', '6px solid rgb(235, 148, 134)');
@@ -70,12 +74,14 @@ checkWinner = () => {
 		spot4.children().css('border', '6px solid rgb(235, 148, 134)');
 	};
 
+	// function displays the modal on a win, and displays the overlay so that the players can click on the board/game pieces 
 	notifyWinWithModal = (quality) => {
 		modalText.text('Four ' + quality + ' in a row, you win!');
 		showModal()
 		$('#close-modal').remove();
 	};
 	
+	// for loop iterates through the spots that have pieces on them and checks for the correct configurations to win on the board as well as checking to see if the pieces have qualities in common which would constitute a win
 	for(let i = 0; i < spotsInPlayId.length; i++){
 	// 1 3 6 10
 		if(spotsInPlayId.includes('one') === true &&  spotsInPlayId.includes('three') === true && spotsInPlayId.includes('six') === true && spotsInPlayId.includes('ten') === true){
@@ -519,11 +525,13 @@ checkWinner = () => {
 	}				
 };
 
+// function takes the active piece and ammends it to the board
 // when the piece is selected it is passed into a function as an argument
 // *when piece is moved the inner circle color needs to be changed to white
-
 // the second argument for that function will be the place on the board that the piece is going to
-choosePlacement = (gamePiece, spotOnBoard) => {
+
+// APPARENTLY THIS CAN'T BE AN ARROW FUNCTION LEARNED THAT BY BREAKING THE GAME SOMETHING TO DO WITH THE JQUERY LIBRARY DIDN'T LOOK INTO IT FURTHER BUT IT SUUUUUUUUCKED UNTIL I FIGURED OUT WHAT HAPPENED
+function choosePlacement (gamePiece, spotOnBoard) {
 	// grab the selected gamePiece
 	gamePiece = currentPiece;
 	// console.log(gamePiece);
@@ -585,7 +593,6 @@ $('.game-pieces').one('click', ()=>{
 // GAME PIECES:
 // each game piece div needs an event listener
 // on the click the piece will be highlighted (salmon color)
-//  -- this will need to be a function that toggles the border?
 $('#A').on('click', selectPiece);
 
 $('#B').on('click', selectPiece);
