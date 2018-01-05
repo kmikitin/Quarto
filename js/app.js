@@ -58,8 +58,10 @@ function checkWinner(){
 	};
 
 	function showModal(quality){
-		modalText.text('Four ' + quality + ' in a row, you win!')
-		theModal.css('display', 'block')
+		modalText.text('Four ' + quality + ' in a row, you win!');
+		theModal.css('display', 'block');
+		$('.modal-overlay').css('display', 'block');
+		$('#close-modal').remove();
 	};
 	
 	for(let i = 0; i < spotsInPlayId.length; i++){
@@ -535,7 +537,9 @@ function resetGame(){
 		$(id).children().css('border', '1px solid rgb(0, 0, 0)').appendTo($('.game-pieces'))
 	};
 	$('.inner-circle').css('background-color', '#7E7F9A');
-	$('.spot').removeClass().addClass('spot')
+	$('.spot').removeClass().addClass('spot');
+	$('.modal-overlay').css('display', 'none');
+	theModal.css('display', 'none');
 	spotsInPlayId = [];
 };
 
@@ -555,10 +559,17 @@ $('#close-modal').on('click', ()=>{
 	modalText.text('Player two choose a placement')
 })
 
+// $('.modal').on('keydown', ()=>{
+// 	theModal.css('display', 'none');
+// 	$('.modal-overlay').css('display', 'none');
+// 	modalText.text('Player two choose a placement')
+// })
+
 // this button reveals the modal again
 $('.game-pieces').one('click', ()=>{
 	// console.log('clicked')
 	theModal.css('display', 'block');
+	$('.modal-overlay').css('display', 'block');
 })
 
 

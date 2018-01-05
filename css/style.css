@@ -187,6 +187,7 @@ span {
 
 ul, ol {
 	padding-left: 20px;
+	font-size: 16px;
 }
 
 /*the actual modal box*/
@@ -207,13 +208,13 @@ ul, ol {
 
 /*the overlay that locks the screen until the modal is closed*/
 .modal-overlay {
-	display: none;
 	z-index: 1;
 	position: fixed;
-  	top: 0;
+	/*border:1px solid black;*/
+  	top: 20%;
  	left: 0;
  	width: 100%;
-  	height: 100%;
+  	height: 80%;
 }
 
 /*button that closes the modal*/
