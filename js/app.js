@@ -36,11 +36,13 @@ selectPiece = (evt) =>{
 	// console.log(this);
 };
 
+// function changes the display property of the modal and its overaly to block to reveal it
 showModal = () => {
 		theModal.css('display', 'block');
 		overlay.css('display', 'block');
 };
 
+// function changes the display property of the modal and its overlay to none to hide it
 hideModal = () => {
 	theModal.css('display', 'none');
 	overlay.css('display', 'none');
@@ -549,8 +551,7 @@ resetGame = () => {
 	};
 	$('.inner-circle').css('background-color', '#7E7F9A');
 	$('.spot').removeClass().addClass('spot');
-	overlay.css('display', 'none');
-	theModal.css('display', 'none');
+	hideModal();
 	spotsInPlayId = [];
 };
 
