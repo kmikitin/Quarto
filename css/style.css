@@ -234,3 +234,12 @@ ul, ol {
 	margin-top: 5%;
 	font-size: 30px;
 }
+
+@media screen and (max-width: 800px) {
+	.instructions {
+		display: block;
+		width: 600px;
+	}
+
+	
+}

@@ -577,6 +577,7 @@ $('#close-modal').on('click', ()=>{
 	modalText.text('Player two choose a placement');
 })
 
+// I was working on the return key event listener and abadoned it, going to come back to it!
 // $('#close-modal').on('keydown', ()=>{
 // 	theModal.css('display', 'none');
 // 	$('.modal-overlay').css('display', 'none');
