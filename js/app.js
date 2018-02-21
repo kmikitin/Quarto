@@ -21,11 +21,13 @@ const spotSixteen = $('#sixteen');
 const theModal = $('.modal');
 const modalText = $('.modal-text');
 const overlay = $('.modal-overlay');
+const instructions = $('.instructions');
+const about = $('.about');
 
 // function alerts the next player to which piece they will be working with by changing the border, also makes that piece active by making it the 'current piece'
 function selectPiece(evt) {
 	// when the user selects a piece, highlight it by changing the border to salmon
-	if($(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
+	if(currentPiece === '' && $(evt.currentTarget).css('border') === '1px solid rgb(0, 0, 0)'){
 		$(evt.currentTarget).css('border', '6px solid rgb(235, 148, 134)')
 		currentPiece = evt.currentTarget;
 		// console.log($(evt.currentTarget).css('border'))
@@ -47,6 +49,18 @@ function showModal() {
 function hideModal() {
 	theModal.css('display', 'none');
 	overlay.css('display', 'none');
+}
+
+// function shows the instructions for the game, or hides them
+function showInstructions() {
+	if (instructions.css('display') === 'none'){
+		instructions.css('display', 'flex');
+		about.css('display', 'block');
+	} else {
+		instructions.css('display', 'none');
+		about.css('display', 'none');
+	}
+	
 }
 
 // the pseudocode and notes on how this works are inside of 'mini.js'
@@ -546,6 +560,7 @@ function choosePlacement(gamePiece, spotOnBoard) {
 	// console.log($(gamePiece).attr('class'))
 	$(spotOnBoard).addClass($(gamePiece).attr('class'));
 	spotsInPlayId.push($(spotOnBoard).attr('id'));
+	currentPiece = '';
 	checkWinner();
 };
 
@@ -663,6 +678,7 @@ spotSixteen.on('click', choosePlacement);
 
 // button to reset the board
 $('#new-game').on('click', resetGame)
+$('#about-game').on('click', showInstructions)
 
 
 /*

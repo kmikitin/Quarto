@@ -11,114 +11,117 @@
 	<header>
 		<h1>QUARTO
 			<br>
+			<button id="about-game">About Game</button>
 			<button id="begin-game">Begin Game</button>
 			<button id="new-game">New Game</button>
 	    </h1>
 	</header>
 
-	<div class="instructions">
-		<span class="about">About the Game:</span>
-			<br>
-			<span>Description and Objective:</span>
-			<ul>
-				<li>There are 16 spots on the board, and 16 different pieces with 4 characteristics: yellow or purple, round or square, big or little, and solid or hollow.</li>
-				<li>The objective of the game is to establish a line of four pieces with at least one characteristic in common.</li>
-				<li>The line of pieces can be in any configuration on the board.</li>
-				<li>The player with the closest upcoming birthday goes first.</li>
-			</ul>
-			<br>
-			<span>How to Play:</span>
-			<ul>
-				<li>The first player will select one of the 16 pieces by clicking on it.</li>
-				<li>The second player will click on the spot on the board where they want that piece to go.</li>
-				<li>It is then the second player's turn to select which piece their opponent will play, with the first player choosing where it goes, and so on.</li>
-			</ul>
-			<br>
-			<span>Winning:</span>
-			There are eight ways to win the game, they are -
-			<ol>
-				<li>Four yellow pieces</li>
-				<li>Four purple pieces</li>
-				<li>Four square pieces</li>
-				<li>Four round pieces</li>
-				<li>Four small pieces</li>
-				<li>Four big pieces</li>
-				<li>Four solid pieces</li>
-				<li>Four hollow pieces</li>
-			</ol>
-	</div>
+	<div id="container">
+		<div class="instructions">
+			<span class="about">About the Game:</span>
+				<br>
+				<span>Description and Objective:</span>
+				<ul>
+					<li>There are 16 spots on the board, and 16 different pieces with 4 characteristics: yellow or purple, round or square, big or little, and solid or hollow.</li>
+					<li>The objective of the game is to establish a line of four pieces with at least one characteristic in common.</li>
+					<li>The line of pieces can be in any configuration on the board.</li>
+					<li>The player with the closest upcoming birthday goes first.</li>
+				</ul>
+				<br>
+				<span>How to Play:</span>
+				<ul>
+					<li>The first player will select one of the 16 pieces by clicking on it.</li>
+					<li>The second player will click on the spot on the board where they want that piece to go.</li>
+					<li>It is then the second player's turn to select which piece their opponent will play, with the first player choosing where it goes, and so on.</li>
+				</ul>
+				<br>
+				<span>Winning:</span>
+				There are eight ways to win the game, they are -
+				<ol>
+					<li>Four yellow pieces</li>
+					<li>Four purple pieces</li>
+					<li>Four square pieces</li>
+					<li>Four round pieces</li>
+					<li>Four small pieces</li>
+					<li>Four big pieces</li>
+					<li>Four solid pieces</li>
+					<li>Four hollow pieces</li>
+				</ol>
+		</div>
 
-	<div class="board">
-		<div class="row" id="row1">
-			<div class="spot" id="one"></div>
+		<div class="board">
+			<div class="row" id="row1">
+				<div class="spot" id="one"></div>
+			</div>
+			<div class="row" id="row2">
+				<div class="spot" id="two"></div>
+				<div class="spot" id="three"></div>
+			</div>
+			<div class="row" id="row3">
+				<div class="spot" id="four"></div>
+				<div class="spot" id="five"></div>
+				<div class="spot" id="six"></div>
+			</div>
+			<div class="row" id="row4">
+				<div class="spot" id="seven"></div>
+				<div class="spot" id="eight"></div>
+				<div class="spot" id="nine"></div>
+				<div class="spot" id="ten"></div>
+			</div>
+			<div class="row" id="row5">
+				<div class="spot" id="eleven"></div>
+				<div class="spot" id="twelve"></div>
+				<div class="spot" id="thirteen"></div>
+			</div>
+			<div class="row" id="row6">
+				<div class="spot" id="fourteen"></div>
+				<div class="spot" id="fifteen"></div>
+			</div>
+			<div class="row" id="row7">
+				<div class="spot" id="sixteen"></div>
+			</div>
 		</div>
-		<div class="row" id="row2">
-			<div class="spot" id="two"></div>
-			<div class="spot" id="three"></div>
-		</div>
-		<div class="row" id="row3">
-			<div class="spot" id="four"></div>
-			<div class="spot" id="five"></div>
-			<div class="spot" id="six"></div>
-		</div>
-		<div class="row" id="row4">
-			<div class="spot" id="seven"></div>
-			<div class="spot" id="eight"></div>
-			<div class="spot" id="nine"></div>
-			<div class="spot" id="ten"></div>
-		</div>
-		<div class="row" id="row5">
-			<div class="spot" id="eleven"></div>
-			<div class="spot" id="twelve"></div>
-			<div class="spot" id="thirteen"></div>
-		</div>
-		<div class="row" id="row6">
-			<div class="spot" id="fourteen"></div>
-			<div class="spot" id="fifteen"></div>
-		</div>
-		<div class="row" id="row7">
-			<div class="spot" id="sixteen"></div>
-		</div>
-	</div>
 
-	<div class="game-pieces">
-		<div class="big square dark smooth" id="A"></div>
-		<div class="small circle light hole " id="P">
-			<div class="inner-circle"></div>
-		</div>
-		<div class="big square dark hole" id="B">
-			<div class="inner-circle" id="big"></div>
-		</div>
-		<div class="big circle dark smooth" id="C"></div>
-		<div class="big circle light smooth" id="K"></div>
-		<div class="small square light smooth" id="M"></div>
-		<div class="big circle dark hole" id="D">
-			<div class="inner-circle" id="big"></div>
-		</div>
-		<div class="small square dark hole" id="E">
-			<div class="inner-circle"></div>
-		</div>
-		<div class="small square dark smooth" id="F"></div>
-		<div class="big circle light hole" id="L">
-			<div class="inner-circle" id="big"></div>
-		</div>
-		<div class="small circle dark smooth" id="G"></div>
-		<div class="small square light hole" id="N">
-			<div class="inner-circle"></div>
-		</div>
-		<div class="small circle light smooth" id="O"></div>
-		<div class="small circle dark hole" id="H">
-			<div class="inner-circle"></div>
-		</div>
-		<div class="big square light smooth" id="I"></div>
-		<div class="big square light hole" id="J">
-			<div class="inner-circle" id="big"></div>
+		<div class="game-pieces">
+			<div class="big square dark smooth" id="A"></div>
+			<div class="small circle light hole " id="P">
+				<div class="inner-circle"></div>
+			</div>
+			<div class="big square dark hole" id="B">
+				<div class="inner-circle" id="big"></div>
+			</div>
+			<div class="big circle dark smooth" id="C"></div>
+			<div class="big circle light smooth" id="K"></div>
+			<div class="small square light smooth" id="M"></div>
+			<div class="big circle dark hole" id="D">
+				<div class="inner-circle" id="big"></div>
+			</div>
+			<div class="small square dark hole" id="E">
+				<div class="inner-circle"></div>
+			</div>
+			<div class="small square dark smooth" id="F"></div>
+			<div class="big circle light hole" id="L">
+				<div class="inner-circle" id="big"></div>
+			</div>
+			<div class="small circle dark smooth" id="G"></div>
+			<div class="small square light hole" id="N">
+				<div class="inner-circle"></div>
+			</div>
+			<div class="small circle light smooth" id="O"></div>
+			<div class="small circle dark hole" id="H">
+				<div class="inner-circle"></div>
+			</div>
+			<div class="big square light smooth" id="I"></div>
+			<div class="big square light hole" id="J">
+				<div class="inner-circle" id="big"></div>
+			</div>
 		</div>
 	</div>
 
 	<div class="modal" id="modal">
 		<button id="close-modal">X</button>
-		<p class="modal-text">Player one choose a piece &#8594;</p>
+		<p class="modal-text">Player one choose a piece</p>
 	</div>
 	<div class="modal-overlay"></div>
 	
