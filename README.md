@@ -1,7 +1,6 @@
 ## Quarto!
 
 **What is this?**
-
 Quarto is a game for two people. There are 16 spots on the board and 16 distinct pieces, each with 4 qualities: light or dark, hollow or smooth, big or small, and square or round. To win a player needs to get four pieces in a row with one characteristic in common. The  four in a row can be in any configuration on the board. 
 
 Game play is a little different. The first player selects a piece and the second player will select where on the board it will go. Then reverse. The second player chooses the piece and the first player chooses where it will go.
@@ -13,23 +12,18 @@ https://www.youtube.com/watch?v=dOG0Elmpwa4
 alt="A board game board with 16 spots and 16 pieces currently placed on the board, each pieces has something in common with four others" width="240" height="180" border="10" /></a>
 
 **Why did you make this?**
-
 This is actually one of my favorite games! And now I can play it anywhere and not have to carry the (acutally quite heavy) board and pieces around.
 
 **What should users be able to do?**
-
 The player is walked through a brief how-to when they initially land on the page. Basically they're able to click on a game piece and then click on the spot on the board they want it to go. 
 
 **What technologies did you use to make it?**
-
-Mainly uses JQuery/JavaScript. I had a STEEP CSS learning curve on this to get things looking the way I want. 
+jQuery/JavaScript - I had a STEEP CSS learning curve on this to get things looking the way I want, I understand flexbox really well now. 
 
 **What are you required to have to use it?**
-
 A computer and access to the internet. Just head to the site: https://kmikitin.github.io/wdi-10-Project-1-Quarto/.
 
 **What’s next/forthcoming features?**
-
 I have so many ideas for more things I want to do!
 * Make it so users can't click more than one spot on the board, once a piece is played you can't move it (this is true in the board game as well).
 * Account for winning in more than one way - so if you had four light AND four circles in a row it would let you know you won both ways.
